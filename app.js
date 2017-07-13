@@ -28,7 +28,12 @@ app.post('/', function (req, res) {
   ];
   var rand = Math.floor(Math.random()*quotes.length);
 
-  res.send(quotes[rand]);
+  res.json({
+    "color": "green",
+    "message": quotes[rand],
+    "notify": false,
+    "message_format": "text"
+  });
 })
 
 app.listen(3000, function () {
