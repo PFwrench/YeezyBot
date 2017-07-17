@@ -1,6 +1,5 @@
 #!/usr/bin/env nodejs
 const express = require('express')
-var _ = require('lodash');
 const Lyricist = require('lyricist/node6');
 var access_token = "KxuchL6lukY_sdkqc2_PzrqUsXrWRfD-FA8OB6Mmt3LS2_NvTR5P865fAMrgaQxz";
 const lyricist = new Lyricist(access_token);
