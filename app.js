@@ -33,13 +33,14 @@ app.post('/', function (req, res) {
     "Mayonnaise colored Benz, I push Miracle Whips. -Kanye",
     "I treat the cash the way the government treats AIDS - I won't be satisfied until all my niggas get it, get it? -Kanye",
     "No more drugs for me, pussy and religion that's all I need. -Kanye",
-    "Head of the class and she just won a swallowship. -Kanye",
+    "Have you ever had sex with a pharoh? Put the pussy in a sarcophagus. Now she claiming that I bruised her esophagus. Head of the class and she just won a swallowship. -Kanye",
     "You see there's leaders, and there's followers, but I'd rather be a dick than a swallower. -Kanye",
     "I threw suicides on the private jet, you know what that means, I'm fly to death. -Kanye",
     "You know, white people get money, don't spend it. Or maybe they get money, buy a business. I'd rather buy 80 gold chains and go ign'ant. -Kanye",
     "She asked me what I wished for on my wishlist. Have you ever asked your bitch for other bitches? -Kanye",
     "Said she wants diamonds, I took her to Ruby Tuesdays. -Kanye",
-    
+    "I miss the old Kanye, straight from the Go Kanye, Chop up the soul Kanye, set on his goals Kanye, I hate the new Kanye, the bad mood Kanye, The always rude Kanye, spaz in the news Kanye, I miss the sweet Kanye, chop up the beats Kanye, I gotta say, at that time I'd like to meet Kanye, See, I invented Kanye, it wasn't any Kanyes, And now I look and look around and there's so many Kanyes, I used to love Kanye, I used to love Kanye, I even had the pink polo, I thought I was Kanye, What if Kanye made a song about Kanye, Called 'I Miss The Old Kanye'? Man, that'd be so Kanye, That's all it was Kanye, we still love Kanye, And I love you like Kanye loves Kanye. -Kanye",
+
   ];
   var rand = Math.floor(Math.random()*quotes.length);
 
