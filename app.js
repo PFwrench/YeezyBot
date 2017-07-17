@@ -25,6 +25,7 @@ function getSongIds(objects) {
 function fetchSongLyrics(songIds) {
   for (var i = 0; i < 15; i++) {
     lyricist.song(songIds[i], { fetchLyrics: true }).then((song) => {
+
       lyrics = lyrics.concat(song.lyrics.split("\n"));
     });
   }
@@ -73,11 +74,11 @@ app.post('/', function (req, res) {
   ];
   */
 
-  var rand = Math.floor(Math.random()*lyrics.length);
+  var rand = Math.floor(Math.random()*(lyrics.length -2));
 
   res.json({
     "color": "green",
-    "message": lyrics[rand],
+    "message": lyrics[rand] + "\n" + lyrics[rand + 1] + "\n" + lyrics[rand + 2],
     "notify": false,
     "message_format": "text"
   });
