@@ -27,6 +27,14 @@ app.post('/', function (req, res) {
     "I was wearing like, a Juicy Couture men’s polo shirt. We weren’t there, like, ready for war. -Kanye",
     "Restraining order, can't see my daughter, her mother, brother, grandmother hate me in that order. -Kanye",
     "If I fuck this model, and she just bleached her asshole, and I get bleach on my t-shirt, imma feel like an asshole. -Kanye",
+    "And what's a black beatle anyway, a fucking roach. I guess that's why they got me sitting in fucking coach. -Kanye",
+    "Your titties, let em out, free at last. Thank God almighty, they free at last! -Kanye",
+    "The plan was to drink until the pain was over, but what's worse, the pain or the hangover? -Kanye",
+    "Mayonnaise colored Benz, I push Miracle Whips. -Kanmye",
+    "I treat the cash the way the government treats AIDS - I won't be satisfied until all my niggas get it, get it? -Kanye",
+    "No more drugs for me, pussy and religion that's all I need. -Kanye",
+    "Head of the class and she just won a swallowship. -Kanye",
+    "You see there's leaders, and there's followers, but I'd rather be a dick than a swallower. -Kanye"
   ];
   var rand = Math.floor(Math.random()*quotes.length);
 
