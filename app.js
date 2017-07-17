@@ -3,11 +3,11 @@ const express = require('express')
 const app = express()
 
 app.post('/', function (req, res) {
-  var quotes = ["When you’re the absolute best, you get hated on the most - Kanye",
+  var quotes = ["When you’re the absolute best, you get hated on the most. - Kanye",
     "My greatest pain in life is that I will never be able to see myself perform live. -Kanye",
     "I hate when I'm on a flight and I wake up with a water bottle next to me like oh great now I gotta be responsible for this water bottle. -Kanye",
-    "You should only believe about 90 percent of what I say. As a matter of fact, don’t even believe anything that I’m saying at all. I could be completely fucking with you, and the world, the entire time -Kanye",
-    "I don't even listen to rap. My apartment is too nice to listen to rap in  -Kanye",
+    "You should only believe about 90 percent of what I say. As a matter of fact, don’t even believe anything that I’m saying at all. I could be completely fucking with you, and the world, the entire time. -Kanye",
+    "I don't even listen to rap. My apartment is too nice to listen to rap in.  -Kanye",
     "I'm a pop enigma. I live and breathe every element in life. I rock a bespoke suit and I go to Harold's for fried chicken. It's all these things at once, because, as a taste maker, I find the best of everything. -Kanye",
     "I jog in Lanvin. -Kanye",
     "Visiting my mind is like visiting the Hermès factory. Sh*t is real. -Kanye",
@@ -19,13 +19,14 @@ app.post('/', function (req, res) {
     "Nothing in life is promised except death. -Kanye",
     "My message isn't perfectly defined. I have, as a human being, fallen to peer pressure. -Kanye",
     "Fashion breaks my heart. -Kanye",
-    "I don't know what's better gettin' laid or gettin' paid. -Kanye",
+    "I don't know what's better; gettin' laid or gettin' paid. -Kanye",
     "Kate Upton ain’t Marilyn Monroe, Kim is Marilyn Monroe, you know that. -Kanye",
     "As a man I am flawed, but my music is perfect. -Kanye",
     "Look at Gaga. She’s the creative director of Polaroid. I like some of the Gaga songs. What the f*** does she know about cameras? -Kanye",
     "I've reached a point in my life where my Truman Show boat has hit the painting. -Kanye",
     "I was wearing like, a Juicy Couture men’s polo shirt. We weren’t there, like, ready for war. -Kanye",
-    "Can't see my daughter, her mother, brother, grandmother hate me in that order. -Kanye"
+    "Restraining order, can't see my daughter, her mother, brother, grandmother hate me in that order. -Kanye",
+    "If I fuck this model, and she just bleached her asshole, and I get bleach on my t-shirt, imma feel like an asshole. -Kanye",
   ];
   var rand = Math.floor(Math.random()*quotes.length);
 
