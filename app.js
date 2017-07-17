@@ -1,4 +1,4 @@
-#!/usr/bin/env nodejs
+#!/usr/bin/env node
 const express = require('express')
 const Lyricist = require('lyricist/node6');
 var access_token = "KxuchL6lukY_sdkqc2_PzrqUsXrWRfD-FA8OB6Mmt3LS2_NvTR5P865fAMrgaQxz";
