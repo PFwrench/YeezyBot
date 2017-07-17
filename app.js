@@ -1,8 +1,38 @@
 #!/usr/bin/env nodejs
 const express = require('express')
+var _ = require('lodash');
+const Lyricist = require('lyricist/node6');
+var access_token = "KxuchL6lukY_sdkqc2_PzrqUsXrWRfD-FA8OB6Mmt3LS2_NvTR5P865fAMrgaQxz";
+const lyricist = new Lyricist(access_token);
+
 const app = express()
 
+var lyrics = [];
+
+function getArtistData() {
+  lyricist.songsByArtist(72).then((songs) => {
+    getSongIds(songs)
+  });
+}
+
+function getSongIds(objects) {
+  var songIds = [];
+  for (var i = 0; i < objects.length; i++) {
+    songIds[i] = objects[i].id;
+  }
+  fetchSongLyrics(songIds);
+}
+
+function fetchSongLyrics(songIds) {
+  for (var i = 0; i < 15; i++) {
+    lyricist.song(songIds[i], { fetchLyrics: true }).then((song) => {
+      lyrics = lyrics.concat(song.lyrics.split("\n"));
+    });
+  }
+}
+
 app.post('/', function (req, res) {
+  /*
   var quotes = ["When you’re the absolute best, you get hated on the most. - Kanye",
     "My greatest pain in life is that I will never be able to see myself perform live. -Kanye",
     "I hate when I'm on a flight and I wake up with a water bottle next to me like oh great now I gotta be responsible for this water bottle. -Kanye",
@@ -42,11 +72,13 @@ app.post('/', function (req, res) {
     "I miss the old Kanye, straight from the Go Kanye, Chop up the soul Kanye, set on his goals Kanye, I hate the new Kanye, the bad mood Kanye, The always rude Kanye, spaz in the news Kanye, I miss the sweet Kanye, chop up the beats Kanye, I gotta say, at that time I'd like to meet Kanye, See, I invented Kanye, it wasn't any Kanyes, And now I look and look around and there's so many Kanyes, I used to love Kanye, I used to love Kanye, I even had the pink polo, I thought I was Kanye, What if Kanye made a song about Kanye, Called 'I Miss The Old Kanye'? Man, that'd be so Kanye, That's all it was Kanye, we still love Kanye, And I love you like Kanye loves Kanye. -Kanye",
 
   ];
-  var rand = Math.floor(Math.random()*quotes.length);
+  */
+
+  var rand = Math.floor(Math.random()*lyrics.length);
 
   res.json({
     "color": "green",
-    "message": quotes[rand],
+    "message": lyrics[rand],
     "notify": false,
     "message_format": "text"
   });
@@ -54,4 +86,5 @@ app.post('/', function (req, res) {
 
 app.listen(3000, function () {
   console.log('Example app listening on port 3000!')
+  getArtistData();
 })
