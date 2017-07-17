@@ -30,11 +30,16 @@ app.post('/', function (req, res) {
     "And what's a black beatle anyway, a fucking roach. I guess that's why they got me sitting in fucking coach. -Kanye",
     "Your titties, let em out, free at last. Thank God almighty, they free at last! -Kanye",
     "The plan was to drink until the pain was over, but what's worse, the pain or the hangover? -Kanye",
-    "Mayonnaise colored Benz, I push Miracle Whips. -Kanmye",
+    "Mayonnaise colored Benz, I push Miracle Whips. -Kanye",
     "I treat the cash the way the government treats AIDS - I won't be satisfied until all my niggas get it, get it? -Kanye",
     "No more drugs for me, pussy and religion that's all I need. -Kanye",
     "Head of the class and she just won a swallowship. -Kanye",
-    "You see there's leaders, and there's followers, but I'd rather be a dick than a swallower. -Kanye"
+    "You see there's leaders, and there's followers, but I'd rather be a dick than a swallower. -Kanye",
+    "I threw suicides on the private jet, you know what that means, I'm fly to death. -Kanye",
+    "You know, white people get money, don't spend it. Or maybe they get money, buy a business. I'd rather buy 80 gold chains and go ign'ant. -Kanye",
+    "She asked me what I wished for on my wishlist. Have you ever asked your bitch for other bitches? -Kanye",
+    "Said she wants diamonds, I took her to Ruby Tuesdays. -Kanye",
+    
   ];
   var rand = Math.floor(Math.random()*quotes.length);
 
