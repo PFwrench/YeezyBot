@@ -34,7 +34,7 @@ function fetchSongLyrics(songIds) {
   }
 }
 
-app.get('/', function (req, res) {
+app.post('/', function (req, res) {
   /*
   var quotes = ["When you’re the absolute best, you get hated on the most. - Kanye",
     "My greatest pain in life is that I will never be able to see myself perform live. -Kanye",
