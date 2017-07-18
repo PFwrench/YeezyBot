@@ -18,6 +18,7 @@ function getSongIds(objects) {
   var songIds = [];
   for (var i = 0; i < objects.length; i++) {
     songIds[i] = objects[i].id;
+    console.log(objects[i].full_title);
   }
   fetchSongLyrics(songIds);
 }
@@ -74,11 +75,11 @@ app.post('/', function (req, res) {
   ];
   */
 
-  var rand = Math.floor(Math.random()*(lyrics.length -2));
+  var rand = Math.floor(Math.random()*(lyrics.length - 1));
 
   res.json({
     "color": "green",
-    "message": lyrics[rand] + "\n" + lyrics[rand + 1] + "\n" + lyrics[rand + 2],
+    "message": lyrics[rand] + "\n" + lyrics[rand + 1],
     "notify": false,
     "message_format": "text"
   });
