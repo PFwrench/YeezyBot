@@ -28,7 +28,7 @@ function fetchSongLyrics(songIds) {
   for (var i = 0; i < 20; i++) {
     lyricist.song(songIds[i], { fetchLyrics: true }).then((song) => {
       var modifiedLyrics = song.lyrics.replace("\n\n", "\n");
-      modifiedLyrics = modifiedLyrics.replace("/\[.*?\]/", "");
+      modifiedLyrics = modifiedLyrics.replace("/\[.*?\]/g", "");
       lyrics = lyrics.concat(song.lyrics.split("\n"));
     });
   }
