@@ -9,7 +9,7 @@ const app = express()
 var lyrics = [];
 
 function getArtistData() {
-  lyricist.songsByArtist(72).then((songs) => {
+  lyricist.songsByArtist(72, { perPage: 40, sort: "popularity" }).then((songs) => {
     getSongIds(songs)
   });
 }
@@ -17,22 +17,24 @@ function getArtistData() {
 function getSongIds(objects) {
   var songIds = [];
   for (var i = 0; i < objects.length; i++) {
-    songIds[i] = objects[i].id;
-    console.log(objects[i].full_title);
+    if (objects[i].primary_artist.id === 72) {
+      songIds.push(objects[i].id);
+    }
   }
   fetchSongLyrics(songIds);
 }
 
 function fetchSongLyrics(songIds) {
-  for (var i = 0; i < 15; i++) {
+  for (var i = 0; i < 20; i++) {
     lyricist.song(songIds[i], { fetchLyrics: true }).then((song) => {
-
+      var modifiedLyrics = song.lyrics.replace("\n\n", "\n");
+      modifiedLyrics = modifiedLyrics.replace("/\[.*?\]/", "");
       lyrics = lyrics.concat(song.lyrics.split("\n"));
     });
   }
 }
 
-app.post('/', function (req, res) {
+app.get('/', function (req, res) {
   /*
   var quotes = ["When you’re the absolute best, you get hated on the most. - Kanye",
     "My greatest pain in life is that I will never be able to see myself perform live. -Kanye",
