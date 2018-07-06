@@ -9,7 +9,7 @@ const lyricist = new Lyricist(access_token);
 var lyrics = [];
 
 function getArtistData() {
-  lyricist.songsByArtist(72, { perPage: 40, sort: "popularity" }).then((songs) => {
+  lyricist.songsByArtist(72, { page: 2, sort: "popularity" }).then((songs) => {
     getSongIds(songs)
   });
 }
@@ -25,7 +25,7 @@ function getSongIds(objects) {
 }
 
 function fetchSongLyrics(songIds) {
-  for (var i = 0; i < 1; i++) {
+  for (var i = 0; i < songIds.length; i++) {
     lyricist.song(songIds[i], { fetchLyrics: true }).then((song) => {
       var modifiedLyrics = song.lyrics;
       modifiedLyrics = modifiedLyrics.replace(/(\n\n)/g, "");
@@ -37,6 +37,8 @@ function fetchSongLyrics(songIds) {
 
 app.post('/', function (req, res) {
   var rand = Math.floor(Math.random()*(lyrics.length - 1));
+
+  console.log(lyrics);
 
   res.json({
     "color": "green",
